@@ -1,0 +1,93 @@
+.sidebar {
+  &__search-container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 30px 0px;
+
+    &--search {
+      height: 40px;
+      border-radius: 24px;
+      background-color: #eee;
+      font-size: 14px;
+      border: 1px solid transparent;
+      width: 100%;
+      outline: none;
+      padding: 0px 15px;
+
+      &:focus {
+        background-color: white;
+        border: 1px solid #eee;
+      }
+    }
+  }
+
+  &__user-list-container {
+      padding: 0 15px;
+      color: #111;
+
+      &--card {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+
+        .avatar {
+          border-radius: 100%;
+          margin: 0px 5px;
+          width: 55px;
+        }
+        .info {
+          padding-top: 5px;
+
+          .name {
+            font-weight: 700;
+            display: block;
+            width: 100%;
+          }
+
+          .bio {
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+            max-width: 200px;
+            display: block;
+          }
+        }
+      }
+
+      &--interests {
+        padding: 0 5px;
+        margin-top: 3%;
+
+        .title {
+          color: #999;
+          margin: 7px 2px;
+          display: block;
+          font-size: 14px;
+        }
+
+        .tags-container {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .tag {
+          padding-right: 8px;
+          padding-left: 8px;
+          border-radius: 2px;
+          text-decoration: none;
+          font-size: 14px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+          line-height: 26px;
+          height: 26px;
+          display: inline-block;
+          background-color: #f1f1f1;
+        }
+
+      }
+  }
+}
