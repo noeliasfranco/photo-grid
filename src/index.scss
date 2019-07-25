@@ -56,6 +56,7 @@ main {
 .content {
   flex: 1;
   background: #f8f8f8;
+  display: flex;
 }
 
 .sidebar {
@@ -66,4 +67,11 @@ main {
 
 .footer {
   background:  #f8f8f8;
+}
+
+.no-image {
+  text-align: center;
+  margin: auto;
+  color: gray;
+  font-size: 2em;
 }

@@ -55,7 +55,7 @@ class App extends React.Component {
         unsplash.users.photos(selectedUser.username, 1, 10, "popular", false)
             .then(toJson)
             .then(json => {
-                if(json && json.length >0 ) {
+                if(json && !json.errors && json.length >0 ) {
                     let photos = json.map(function(item) {
                        return {
                            width: item.width,
@@ -64,6 +64,8 @@ class App extends React.Component {
                        }
                     });
                     that.setState({selectedUserPhotos: photos});
+                } else if (!json.errors && json.length === 0) {
+                    that.setState({selectedUserPhotos: []});
                 }
             });
     }
@@ -76,7 +78,9 @@ class App extends React.Component {
             <main>
                 <div className="flex-container wrapper">
                     <Sidebar findUserProfile={this.findUserProfile} selectedUser={selectedUser}/>
-                    <PhotoGrid photos={selectedUserPhotos}/>
+                    <PhotoGrid
+                        selectedUser={selectedUser}
+                        photos={selectedUserPhotos}/>
                 </div>
                 <Footer/>
             </main>
